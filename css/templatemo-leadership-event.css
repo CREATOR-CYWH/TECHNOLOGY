@@ -1060,4 +1060,11 @@ footer .brand-text {
     justify-content: center;
   }
 }
+.nav-link {
+  color: white !important;
+  transition: color 0.2s ease;
+}
 
+.nav-link:hover {
+  color: #00BFFF !important; /* 蓝色悬停效果，可自行换色 */
+}
