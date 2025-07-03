@@ -588,9 +588,16 @@ footer .brand-text {
   transition: all 1s;
 }
 
-.speakers-image {
-   width: 100%;
-   object-fit: cover;
+.speakers-thumb:not(.speakers-thumb-small) .speakers-image {
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* 控制小图样式（下方并排展示） */
+.speakers-thumb-small .speakers-image {
+  height: 220px;
+  object-fit: cover;
 }
 
 .speakers-text-info {
