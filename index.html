@@ -878,15 +878,32 @@ https://templatemo.com/tm-575-leadership-event
                 </div>
             </div>
             <script>
-              const links = document.querySelectorAll(".nav-link");
-              links.forEach(link => {
-                  if (link.href === window.location.href) {
-                      link.classList.add("active");
-                  } else {
-                      link.classList.remove("active");
-                  }
+              document.addEventListener("DOMContentLoaded", function () {
+                const sections = document.querySelectorAll("section[id]");
+                const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+                function onScroll() {
+                  let scrollPos = window.scrollY + 100; // 偏移修正，视导航栏高度适调
+
+                  sections.forEach((section) => {
+                    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                      const id = section.getAttribute("id");
+
+                      navLinks.forEach((link) => {
+                        link.classList.remove("active");
+
+                        if (link.getAttribute("href").includes(`#${id}`)) {
+                          link.classList.add("active");
+                        }
+                      });
+                    }
+                  });
+                }
+
+                window.addEventListener("scroll", onScroll);
               });
             </script>
+
 
         </footer>
 
