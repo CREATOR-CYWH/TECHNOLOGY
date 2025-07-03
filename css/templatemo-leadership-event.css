@@ -307,6 +307,11 @@ strong {
   vertical-align: top;
   color: #ffffff; 
 }
+footer .brand-text {
+  color: #2a3054;
+}
+
+
 
 .navbar-expand-lg .navbar-nav .nav-link {
   padding-right: 20px;
